@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let alcool = 0;
+        let gasolina = 0;
+        let diesel = 0;
+
+        while (true) {
+            let codigo = parseInt(prompt("Informe o código do combustível (1.Álcool 2.Gasolina 3.Diesel 4.Fim):"));
+
+            if (codigo === 4) {
+                alert("MUITO OBRIGADO");
+                alert("Álcool: " + alcool);
+                alert("Gasolina: " + gasolina);
+                alert("Diesel: " + diesel);
+                break;
+            } else if (codigo === 1) {
+                alcool++;
+            } else if (codigo === 2) {
+                gasolina++;
+            } else if (codigo === 3) {
+                diesel++;
+            } else {
+                console.log("Código inválido. Tente novamente.");
+            }
+        }
+    </script>
+</body>
+
+</html>

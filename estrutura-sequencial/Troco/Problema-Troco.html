@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Troco </title>
+
+    <script>
+        function Troco() {
+            let preco = parseFloat(document.getElementById('preco').value);
+            let quantidade = parseInt(document.getElementById('quantidade').value);
+            let dinheiro = parseFloat(document.getElementById('dinheiro').value);
+
+            let total = preco * quantidade;
+
+            if (dinheiro >= total) {
+                let troco = dinheiro - total;
+                document.getElementById('resultado').innerText = `Troco a ser devolvido: R$ ${troco.toFixed(2)}`;
+            } else {
+                let valorRestante = total - dinheiro;
+                document.getElementById('resultado').innerText = `Dinheiro insuficiente. Faltam R$ ${valorRestante.toFixed(2)}`;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Calculadora de Troco</h1>
+    <input type="number" id="preco" placeholder="Preço unitário"><br><br>
+    <input type="number" id="quantidade" placeholder="Quantidade"><br><br>
+    <input type="number" id="dinheiro" placeholder="Quantia dada"><br><br>
+    <button onclick="Troco()">Calcular Troco</button>
+    <p id="resultado"></p>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <script>
+        let n = window.prompt("Digite a quantidade de dados:");
+        let valor = [];
+        let x = 0;
+
+        for (let pos = 0; pos < n; pos++) {
+            x = window.prompt(`Digite o ${pos}º numero:`);
+            valor[pos] = x;
+        }
+
+
+        valor.sort()
+        window.alert(`O tem sistema ${valor.length} posições`)
+
+        window.alert(valor);
+    </script>
+
+</body>
+
+</html>

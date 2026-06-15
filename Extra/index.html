@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Lista de Tarefas</h1>
+    <input type="text" id="nova-tarefa" placeholder="Nova tarefa...">
+    <button id="adicionar-tarefa">Adicionar</button>
+    <ul id="lista-tarefas"></ul>
+    <script src="script.js"></script>
+</body>
+
+</html>
+<!-- 
+    <script>
+document.getElementById('adicionar-tarefa').addEventListener('click', function() {
+    let textoTarefa = document.getElementById('nova-tarefa').value;
+    if (textoTarefa === '') return;
+
+    let listaTarefas = document.getElementById('lista-tarefas');
+
+    let itemLista = document.createElement('li');
+    itemLista.textContent = textoTarefa;
+
+    let botaoConcluir = document.createElement('button');
+    botaoConcluir.textContent = 'Concluir';
+    botaoConcluir.addEventListener('click', function() {
+        itemLista.style.textDecoration = 'line-through';
+    });
+
+    let botaoExcluir = document.createElement('button');
+    botaoExcluir.textContent = 'Excluir';
+    botaoExcluir.addEventListener('click', function() {
+        listaTarefas.removeChild(itemLista);
+    });
+
+    itemLista.appendChild(botaoConcluir);
+    itemLista.appendChild(botaoExcluir);
+    listaTarefas.appendChild(itemLista);
+
+    document.getElementById('nova-tarefa').value = '';
+}); 
+</script>-->

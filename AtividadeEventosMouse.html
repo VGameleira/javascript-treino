@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retângulos Mouse</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: gray;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .retangulo {
+            width: 150px;
+            height: 100px;
+            background-color: white;
+            : 2px 2px 5px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="retangulo" id="a"></div>
+        <div class="retangulo" id="b"></div>
+        <div class="retangulo" id="c"></div>
+        <div class="retangulo" id="d"></div>
+        <div class="retangulo" id="e"></div>
+        <div class="retangulo" id="f"></div>
+        <div class="retangulo" id="g"></div>
+        <div class="retangulo" id="h"></div>
+        <div class="retangulo" id="i"></div>
+        <div class="retangulo" id="j"></div>
+    </div>
+
+    <script>
+        const retangulo = document.querySelectorAll('.retangulo');
+
+        retangulo.forEach(retangulo => {
+            retangulo.addEventListener('mouseenter', () => {
+                retangulo.style.backgroundColor = 'green';
+            });
+
+            retangulo.addEventListener('mouseout', () => {
+                retangulo.style.backgroundColor = 'white';
+            });
+        });
+        retangulo.addEventListener('onclick', () => {
+                    retangulo.innerText = "saiu"
+    </script>
+</body>
+
+</html>

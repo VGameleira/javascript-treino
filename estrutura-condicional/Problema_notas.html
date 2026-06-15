@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas do Aluno</title>
+</head>
+
+<body>
+    <h1>Calculadora de Notas</h1>
+    <input type="number" id="nota1" placeholder="Nota do primeiro semestre"><br>
+    <input type="number" id="nota2" placeholder="Nota do segundo semestre"><br>
+    <button onclick="calcularNotaFinal()">Calcular Nota Final</button>
+
+    <p id="resultado"></p>
+
+
+
+    <script>
+        function calcularNotaFinal() {
+            let n1 = parseFloat(document.getElementById('nota1').value);
+            let n2 = parseFloat(document.getElementById('nota2').value);
+            let notaFinal = (n1 + n2) / 2;
+
+            let resultado = `Nota final: ${notaFinal.toFixed(1)}`;
+
+            if (notaFinal < 60.0) {
+                resultado += "REPROVADO";
+            } else {
+                resultado += "APROVADO";
+            }
+
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Aumento Salarial</title>
+</head>
+
+<body>
+    <h1>Calculadora de Aumento Salarial</h1>
+    <label for="salario">Digite o salário atual:</label>
+    <input type="number" id="salario" name="salario">
+    <button onclick="calcularAumento()">Calcular Aumento</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularAumento() {
+            let atual = Number.parseFloat(document.getElementById('salario').value);
+            let aumento;
+            let novoSalario;
+
+            if (atual <= 1000) {
+                aumento = 20;
+                novoSalario = atual * (1 + aumento / 100);
+            } else if (atual > 1000 && atual <= 3000) {
+                aumento = 15;
+                novoSalario = atual * (1 + aumento / 100);
+            } else if (atual > 3000 && atual <= 8000) {
+                aumento = 10;
+                novoSalario = atual * (1 + aumento / 100);
+            } else if (atual > 8000) {
+                aumento = 5;
+                novoSalario = atual * (1 + aumento / 100);
+            }
+
+            document.getElementById('resultado').innerText = `Novo salário: ${novoSalario.toFixed(2)}\n
+            Aumento: ${(novoSalario - atual).toFixed(2)}\n
+            Percentual de aumento: ${aumento}%`;
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- let vendedor = prompt("Digite seu nome");
+let salario = parseFloat(prompt("Digite o seu salário"));
+let vendas = parseFloat(prompt("Digite o valor das vendas"));
+
+function calcularComissao(vendas) {
+    let comissao;
+    if (vendas > 5000) {
+        comissao = vendas * 0.15;
+    } else if (vendas >= 1500 && vendas <= 3000) {
+        comissao = vendas * 0.10;
+    } else {
+        comissao = vendas * 0.05;
+    }
+    return comissao;
+}
+
+let comissao = calcularComissao(vendas);
+let pagamentoTotal = salario + comissao;
+
+alert(`Vendedor: ${vendedor} \nValor das Vendas: R$ ${vendas.toFixed(2)}\nValor da Comissão: R$ ${comissao.toFixed(2)}\nValor do Salário: R$ ${salario.toFixed(2)}\nPagamento Total: R$ ${pagamentoTotal.toFixed(2)}`); -->

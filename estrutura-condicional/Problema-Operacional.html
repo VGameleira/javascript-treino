@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Operadora </title>
+</head>
+
+<body>
+    <h1>Operadora</h1>
+    <p>Digite a quantidade de minutos consumidos:</p>
+    <input type="number" id="minutos">
+    <button onclick="calcularConta()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularConta() {
+            let min = document.getElementById('minutos').value;
+            let plano = 50.00;
+            let minutosInc = 100;
+            let custoPorMin = 2.00;
+            let valorTotal = plano;
+
+            if (min > minutosInc) {
+                valorTotal += (min - minutosInc) * custoPorMin;
+            } else {
+                valorTotal = plano;
+            }
+
+            document.getElementById('resultado').innerText = `Valor a ser pago: R$ ${valorTotal.toFixed(2)}`;
+        }
+    </script>
+</body>
+
+</html>

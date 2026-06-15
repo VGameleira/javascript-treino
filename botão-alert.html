@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicas de Bem-Estar</title>
+    <style>
+        #mensagemErro {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Bem-vindo ao Site de Dicas de Bem-Estar!</h1>;
+    <button id="meuBotao">Clique para uma Dica!</button>
+    <button id="botaoErro">Ativar Mensagem de Erro</button>
+    <p id="mensagemErro"></p>
+
+
+
+    <script>
+        document.getElementById("meuBotao").addEventListener("click", function() {
+            try {
+                let dicas = [
+                    "Beba bastante água ao longo do dia!",
+                    "Faça refeições equilibradas e ricas em nutrientes.",
+                    "Durma pelo menos 7-8 horas por noite.",
+                    "Pratique atividades físicas regularmente.",
+                    "Reserve um tempo para meditação ou mindfulness.",
+                    "Pratique a gratidão, anotando coisas pelas quais você é grato.",
+                    "Desconecte-se das redes sociais por um tempo.",
+                    "Converse com amigos e familiares regularmente.",
+                    "Faça uma caminhada ao ar livre.",
+                    "Experimente uma nova aula de ioga ou pilates.",
+                    "Faça alongamentos simples ao acordar.",
+                    "Dance ao som da sua música favorita."
+                ];
+                let dicaAleatoria = dicas[Math.floor(Math.random() * dicas.length)];
+                alert("Dica de Bem-Estar: " + dicaAleatoria);
+            } catch (erro) {
+                document.getElementById("mensagemErro").style.display = "block";
+                document.getElementById("mensagemErro").innerText = "Ocorreu um erro: " + erro.message;
+                console.error("Ocorreu um erro: ", erro);
+                alert("Desculpe, algo deu errado. Tente novamente mais tarde.");
+            } finally {
+                console.log("Ação finalizada após clicar no botão de dica.");
+            }
+        });
+
+        document.getElementById("botaoErro").addEventListener("click", function() {
+            try {
+                throw new Error("Erro proposital ativado!");
+            } catch (erro) {
+                document.getElementById("mensagemErro").style.display = "block";
+                document.getElementById("mensagemErro").innerText = "Ocorreu um erro: " + erro.message;
+                console.error("Ocorreu um erro: ", erro);
+                alert("Desculpe, algo deu errado. Tente novamente mais tarde.");
+            } finally {
+                console.log("Ação finalizada após a tentativa de ativar o erro.");
+            }
+        });
+    </script>
+</body>
+
+</html>
